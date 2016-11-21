@@ -35,7 +35,7 @@ client.call(
 );
 
 client.call(
-	{"jsonrpc": "2.0", "method": "listUsers", "params": ['user01'], "id": 3}, function (err, res) {
+	{"jsonrpc": "2.0", "method": "listUsers", "params": [], "id": 3}, function (err, res) {
 		// Did it all work ? 
 		if (err)
 			{ console.log(err); }
@@ -45,7 +45,7 @@ client.call(
 );
 
 client.call(
-	{"jsonrpc": "2.0", "method": "deleteUser", "params": ['user02'], "id": 4}, function (err, res) {
+	{"jsonrpc": "2.0", "method": "deleteUser", "params": ['name', 'user02'], "id": 4}, function (err, res) {
 		// Did it all work ? 
 		if (err)
 			{ console.log(err); }
@@ -55,7 +55,7 @@ client.call(
 );
 
 client.call(
-	{"jsonrpc": "2.0", "method": "listUsers", "params": ['user01'], "id": 5}, function (err, res) {
+	{"jsonrpc": "2.0", "method": "listUsers", "params": [], "id": 5}, function (err, res) {
 		// Did it all work ? 
 		if (err)
 			{ console.log(err); }
@@ -75,7 +75,7 @@ client.call(
 );
 
 client.call(
-	{"jsonrpc": "2.0", "method": "listUsers", "params": ['user01'], "id": 7}, function (err, res) {
+	{"jsonrpc": "2.0", "method": "listUsers", "params": [], "id": 7}, function (err, res) {
 		// Did it all work ? 
 		if (err)
 			{ console.log(err); }

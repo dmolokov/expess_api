@@ -35,8 +35,10 @@ serv.addMethod('addUser', function (para, callback) {
 // Add your methods 
 serv.addMethod('deleteUser', function (para, callback) {
 	var error, result;
-	var index_to_delete = users.indexOf(para[0]);
-	users.splice(index_to_delete, 1);
+	var index_to_delete = arrayObjectIndexOf(users, para[1], para[0]);
+	if(index_to_delete != -1) {
+		users.splice(index_to_delete, 1);
+	}
 	callback(error, result);
 });
 
