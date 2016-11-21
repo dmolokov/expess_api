@@ -15,6 +15,7 @@ var user = {
 		"name" : "mohit",
 		"password" : "password4",
 		"profession" : "teacher",
+		"score" : 25,
 		"id": 4
 	}
 };

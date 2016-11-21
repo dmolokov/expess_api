@@ -3,18 +3,21 @@
       "name" : "mahesh",
       "password" : "password1",
       "profession" : "teacher",
+	  "score" : 34,
       "id": 1
    },
    "user2" : {
       "name" : "suresh",
       "password" : "password2",
       "profession" : "librarian",
+	  "score" : 46,
       "id": 2
    },
    "user3" : {
       "name" : "ramesh",
       "password" : "password3",
       "profession" : "clerk",
+	  "score" : 71,
       "id": 3
    }
 }
