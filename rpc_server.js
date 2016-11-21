@@ -20,7 +20,7 @@ var serv = new rpc.Server(options);
 serv.addMethod('listUsers', function (para, callback) {
 	var error, result = '';
 	users.forEach(function (v, i) {
-		result += ' ' + v;
+		result += ' ' + v['name'] + ' ' + v['score'];
 	});
 	callback(error, result);
 });
@@ -28,7 +28,7 @@ serv.addMethod('listUsers', function (para, callback) {
 // Add your methods 
 serv.addMethod('addUser', function (para, callback) {
 	var error, result;
-	users.push(para[0]);
+	users.push({'name' : para[0], 'score' : para[1]});
 	callback(error, result);
 });
 
