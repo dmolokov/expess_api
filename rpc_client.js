@@ -13,9 +13,29 @@ var options = {
  
 // Create a server object with options 
 var client = new rpc.Client(options);
- 
+
 client.call(
-	{"jsonrpc": "2.0", "method": "myMethod", "params": [1,2], "id": 1}, function (err, res) {
+	{"jsonrpc": "2.0", "method": "addUser", "params": ['user01'], "id": 1}, function (err, res) {
+		// Did it all work ? 
+		if (err)
+			{ console.log(err); }
+		else
+			{ console.log(res); }
+	}
+);
+
+client.call(
+	{"jsonrpc": "2.0", "method": "addUser", "params": ['user02'], "id": 1}, function (err, res) {
+		// Did it all work ? 
+		if (err)
+			{ console.log(err); }
+		else
+			{ console.log(res); }
+	}
+);
+
+client.call(
+	{"jsonrpc": "2.0", "method": "listUsers", "params": ['user01'], "id": 1}, function (err, res) {
 		// Did it all work ? 
 		if (err)
 			{ console.log(err); }
@@ -24,12 +44,22 @@ client.call(
 	}
 );
  
-client.call(
-	{"jsonrpc": "2.0", "method": "myMethod", "params": [1, 2, 3], "id": 2 }, function (err, res) {
-		// Did it all work ? 
-		if (err)
-			{ console.log(err); }
-		else
-			{ console.log(res); }
-	}
-);
+//client.call(
+//	{"jsonrpc": "2.0", "method": "myMethod", "params": [1,2], "id": 1}, function (err, res) {
+//		// Did it all work ? 
+//		if (err)
+//			{ console.log(err); }
+//		else
+//			{ console.log(res); }
+//	}
+//);
+// 
+//client.call(
+//	{"jsonrpc": "2.0", "method": "myMethod", "params": [1, 2, 3], "id": 2 }, function (err, res) {
+//		// Did it all work ? 
+//		if (err)
+//			{ console.log(err); }
+//		else
+//			{ console.log(res); }
+//	}
+//);

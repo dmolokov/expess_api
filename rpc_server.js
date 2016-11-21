@@ -10,12 +10,52 @@ var options = {
 	// boolean false to turn rpc checks off, default true 
 	strict: true
 };
+
+var users = [];
  
 // Create a server object with options 
 var serv = new rpc.Server(options);
  
 // Add your methods 
-serv.addMethod('myMethod', function (para, callback) {
+serv.addMethod('listUsers', function (para, callback) {
+	var error, result;
+	users.forEach(function (v, i) {
+		result += v.name;
+	});
+	callback(error, result);
+});
+
+// Add your methods 
+serv.addMethod('addUser', function (para, callback) {
+	var error, result;
+	
+	users.push(para[0]);
+	console.log(users);
+	
+	callback(error, result);
+});
+
+// Add your methods 
+serv.addMethod('dleteUser', function (para, callback) {
+	var error, result;
+	//result = 2;
+	// Add 2 or more parameters together 
+	if (para.length === 2) {
+		result = para[0] + para[1];
+	} else if (para.length > 2) {
+		result = 0;
+		para.forEach(function (v, i) {
+			result += v;
+		});
+	} else {
+		error = { code: -32602, message: "Invalid params" };
+	}
+	
+	callback(error, result);
+});
+
+// Add your methods 
+serv.addMethod('updateUser', function (para, callback) {
 	var error, result;
 	//result = 2;
 	// Add 2 or more parameters together 
