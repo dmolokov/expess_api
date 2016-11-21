@@ -40,12 +40,22 @@ serv.addMethod('deleteUser', function (para, callback) {
 	callback(error, result);
 });
 
+function arrayObjectIndexOf(myArray, searchTerm, property) {
+    for(var i = 0, len = myArray.length; i < len; i++) {
+        if (myArray[i][property] === searchTerm) return i;
+    }
+    return -1;
+}
+
 // Add your methods 
 serv.addMethod('updateUser', function (para, callback) {
 	var error, result;
-	var index_to_update = users.indexOf(para[0]);
+	var index_to_update = arrayObjectIndexOf(users, para[1], para[0]);
+	console.log(index_to_update);
+	console.log(para[2]);
+	console.log(para[3]);
 	if(index_to_update != -1) {
-		users.splice(index_to_update, 1, para[1]);
+		users[index_to_update][para[2]] = para[3];
 	}
 	callback(error, result);
 });

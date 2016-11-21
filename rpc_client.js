@@ -65,7 +65,7 @@ client.call(
 );
 
 client.call(
-	{"jsonrpc": "2.0", "method": "updateUser", "params": ['user01', 'user03'], "id": 6}, function (err, res) {
+	{"jsonrpc": "2.0", "method": "updateUser", "params": ['name', 'user01', 'name', 'user03'], "id": 6}, function (err, res) {
 		// Did it all work ? 
 		if (err)
 			{ console.log(err); }
