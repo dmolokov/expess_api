@@ -63,4 +63,24 @@ client.call(
 			{ console.log(res); }
 	}
 );
+
+client.call(
+	{"jsonrpc": "2.0", "method": "updateUser", "params": ['user01', 'user03'], "id": 6}, function (err, res) {
+		// Did it all work ? 
+		if (err)
+			{ console.log(err); }
+		else
+			{ console.log(res); }
+	}
+);
+
+client.call(
+	{"jsonrpc": "2.0", "method": "listUsers", "params": ['user01'], "id": 7}, function (err, res) {
+		// Did it all work ? 
+		if (err)
+			{ console.log(err); }
+		else
+			{ console.log(res); }
+	}
+);
  

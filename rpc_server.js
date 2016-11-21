@@ -35,29 +35,18 @@ serv.addMethod('addUser', function (para, callback) {
 // Add your methods 
 serv.addMethod('deleteUser', function (para, callback) {
 	var error, result;
-
 	var index_to_delete = users.indexOf(para[0]);
 	users.splice(index_to_delete, 1);
-	
 	callback(error, result);
 });
 
 // Add your methods 
 serv.addMethod('updateUser', function (para, callback) {
 	var error, result;
-	//result = 2;
-	// Add 2 or more parameters together 
-	if (para.length === 2) {
-		result = para[0] + para[1];
-	} else if (para.length > 2) {
-		result = 0;
-		para.forEach(function (v, i) {
-			result += v;
-		});
-	} else {
-		error = { code: -32602, message: "Invalid params" };
+	var index_to_update = users.indexOf(para[0]);
+	if(index_to_update != -1) {
+		users.splice(index_to_update, 1, para[1]);
 	}
-	
 	callback(error, result);
 });
 
