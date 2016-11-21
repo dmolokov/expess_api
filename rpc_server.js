@@ -28,26 +28,16 @@ serv.addMethod('listUsers', function (para, callback) {
 // Add your methods 
 serv.addMethod('addUser', function (para, callback) {
 	var error, result;
-	
 	users.push(para[0]);
 	callback(error, result);
 });
 
 // Add your methods 
-serv.addMethod('dleteUser', function (para, callback) {
+serv.addMethod('deleteUser', function (para, callback) {
 	var error, result;
-	//result = 2;
-	// Add 2 or more parameters together 
-	if (para.length === 2) {
-		result = para[0] + para[1];
-	} else if (para.length > 2) {
-		result = 0;
-		para.forEach(function (v, i) {
-			result += v;
-		});
-	} else {
-		error = { code: -32602, message: "Invalid params" };
-	}
+
+	var index_to_delete = users.indexOf(para[0]);
+	users.splice(index_to_delete, 1);
 	
 	callback(error, result);
 });
